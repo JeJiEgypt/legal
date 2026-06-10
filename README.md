@@ -10,6 +10,7 @@ is on the **GitHub Team** plan, which allows Pages to build from private reposit
 
 - Site root: https://jejiegypt.github.io/legal/
 - The Alpha — Privacy Policy: https://jejiegypt.github.io/legal/the-alpha/privacy/
+- Cats Up — Privacy Policy: https://jejiegypt.github.io/legal/cats-up/privacy/
 
 ## Structure
 
