@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Cats Up Desktop for Windows — Privacy Policy</title>
+<style>
+  body { font-family: -apple-system, system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+         max-width: 720px; margin: 40px auto; padding: 0 20px; line-height: 1.65; color: #1a1a1a; }
+  h1 { font-size: 1.8rem; margin-bottom: .2rem; } h2 { font-size: 1.2rem; margin-top: 2rem; }
+  .updated { color: #666; font-size: .9rem; margin-top: 0; }
+  .platform { color: #666; font-size: .9rem; margin-top: .2rem; }
+  ul { padding-left: 1.2rem; } li { margin: .3rem 0; }
+  code { background: #f4f4f4; padding: 1px 5px; border-radius: 4px; font-size: .9em; }
+  table { border-collapse: collapse; width: 100%; margin: 1rem 0; font-size: .95rem; }
+  th, td { border: 1px solid #e2e2e2; padding: .5rem .6rem; text-align: left; vertical-align: top; }
+  th { background: #fafafa; }
+  .note { background: #fbf7e8; border: 1px solid #ecdfae; border-radius: 6px; padding: .8rem 1rem; }
+  footer { margin-top: 3rem; color: #666; font-size: .85rem; }
+  a { color: #1a56db; }
+</style>
+</head>
+<body>
+<h1>Privacy Policy — Cats Up Desktop for Windows</h1>
+<p class="updated">Last updated: August 1, 2026</p>
+<p class="platform">This policy covers the <strong>Windows</strong> version of Cats Up Desktop,
+distributed through the Microsoft Store. The macOS version has its own policy:
+<a href="../">Cats Up — Privacy Policy (macOS)</a>.</p>
+
+<p>Cats Up Desktop is a clipboard manager and file drawer that runs entirely on your own computer.
+It has <strong>no user accounts, no servers of ours, no analytics, and no advertising</strong>.
+Everything it keeps stays on your device, with one exception you control: a bug report you choose
+to send (see <a href="#network">What leaves your device</a>).</p>
+
+<h2>What the app stores, and where</h2>
+<p>To work as a clipboard manager, the app keeps a history of what you copy and capture:</p>
+<table>
+  <tr><th>What</th><th>What is stored</th></tr>
+  <tr><td>Copied text and links</td><td>The text itself (up to 50,000 characters per item)</td></tr>
+  <tr><td>Copied images (image data)</td><td>The image, saved as a PNG file in the app's own data folder</td></tr>
+  <tr><td>Screenshots you take</td><td>The image file, moved into the app's own data folder</td></tr>
+  <tr><td>Screen recordings you make</td><td>The video file, moved into the app's own data folder</td></tr>
+  <tr><td>Files you copy in File Explorer</td><td><strong>Only a reference</strong> — the file's path, name, size and type. The file itself is never copied or moved.</td></tr>
+  <tr><td>Files you download</td><td><strong>Only a reference</strong>, as above</td></tr>
+  <tr><td>Folders you add to the Local tab</td><td>The folder's path, so it can be shown again next time</td></tr>
+  <tr><td>Your settings</td><td>Language, sort order, window size, and which capture types are enabled</td></tr>
+</table>
+
+<p>All of this is stored <strong>locally and unencrypted</strong> in the app's per-user application-data
+folder — it has the same protection as any other file in your Windows user account, and nothing more.
+For the Microsoft Store build this is inside the app's package data under
+<code>%LOCALAPPDATA%\Packages\</code>; a directly-downloaded build uses
+<code>%APPDATA%\Cats Up Desktop</code>. Nothing is written outside your own user profile.</p>
+
+<div class="note">
+<p><strong>Please understand what a clipboard history means.</strong> If you copy a password, a recovery
+code, or anything else sensitive, it is saved as plain text like any other copied text. Delete such items
+from the app when you are done, or turn off text capture in Settings before copying them.</p>
+</div>
+
+<h2>What the app watches on your computer</h2>
+<ul>
+  <li><strong>The clipboard</strong>, checked about twice per second while the app is running, so text,
+      links, images, and copied files appear in the drawer.</li>
+  <li><strong><code>Pictures\Screenshots</code></strong>, so a <code>Win</code>+<code>PrtScn</code> or
+      Snipping Tool capture appears automatically.</li>
+  <li><strong><code>Videos\Captures</code></strong>, so an Xbox Game Bar
+      (<code>Win</code>+<code>Alt</code>+<code>R</code>) recording appears automatically.</li>
+  <li><strong>Your Downloads folder</strong>, to notice newly finished downloads.</li>
+  <li><strong>Folders you add yourself</strong> to the Local tab — listed only while you browse them.</li>
+</ul>
+<p>Because you can move those Windows folders, the app also performs a <strong>read-only</strong> query of
+your own user registry (the <code>User Shell Folders</code> values under <code>HKEY_CURRENT_USER</code>)
+to find where they actually are. It reads nothing else from the registry and writes nothing to it.</p>
+<p>The app does not scan, index, or upload the rest of your disk, and it does not read the contents of
+files it has not been asked to handle.</p>
+
+<h2>Windows permissions the app uses</h2>
+<p>Cats Up Desktop is a full-trust desktop application (<code>runFullTrust</code>). That is what lets it
+read the clipboard, notice new files in the folders listed above, provide native drag-and-drop into other
+applications, show a tray icon, and respond to a global show/hide shortcut. It uses that access for those
+purposes only. It requests no camera, microphone, location, contacts, or account access, and it does not
+capture your screen itself — screenshots and recordings are made by Windows, and the app simply picks up
+the resulting file.</p>
+
+<h2>Files the app moves or deletes</h2>
+<p>So a capture lives in one place instead of two, the app changes files in these cases — and only these:</p>
+<ul>
+  <li><strong>A screenshot it captures is removed from your <code>Pictures\Screenshots</code> folder</strong>
+      once it has been added to the app.</li>
+  <li><strong>A screen recording it captures is moved</strong> out of <code>Videos\Captures</code> into the
+      app's own data folder.</li>
+  <li>Deleting such an item in the app sends the file to your <strong>Recycle Bin</strong> where possible,
+      rather than destroying it.</li>
+  <li><strong>Files you merely copied or downloaded are never touched.</strong> Removing that entry removes
+      the entry only; your original file stays exactly where it is.</li>
+  <li>Actions you explicitly choose in the Local tab — rename, duplicate, compress, move to Recycle Bin,
+      or dragging a file into a folder — do exactly what they say, to the files you selected.</li>
+</ul>
+<p>You can switch off any capture type — texts, images, videos, links, files — in Settings. With images
+off, for example, your screenshots stay in your screenshots folder untouched, exactly as if the app were
+not running.</p>
+
+<h2 id="network">What leaves your device</h2>
+<p><strong>One thing, and only if you choose to send it: a bug report.</strong></p>
+<p>If you open <strong>Report a bug</strong> and press Send, the app transmits what you typed — the
+subject, the description, and your email address if you chose to provide one — together with the app
+version and your platform name (<code>win32</code>). It is sent over HTTPS to <strong>Web3Forms</strong>
+(<code>api.web3forms.com</code>), a third-party form-to-email relay, which forwards it to the developer's
+inbox at <a href="mailto:jejiegypt@gmail.com">jejiegypt@gmail.com</a>. It is used only to answer and fix
+the problem you reported. See <a href="https://web3forms.com/privacy">Web3Forms' privacy policy</a> for
+how they handle that message in transit.</p>
+<p>Nothing else is sent. The app makes <strong>no</strong> other network requests: no analytics, no
+telemetry, no crash reporting, no advertising, no third-party SDKs or trackers, and no update checks of
+its own (updates are delivered by the Microsoft Store). <strong>No clipboard content, screenshot,
+recording, file, or folder information is ever transmitted</strong> — not to us, not to anyone. The only
+other time the network is involved is when <em>you</em> click a link in a captured item, which opens it in
+your default browser.</p>
+<p>Your data is never sold, rented, or shared. There is no third party with access to it, because it
+does not leave your computer.</p>
+
+<h2>How long data is kept, and how to delete it</h2>
+<ul>
+  <li>Delete a single item with the <strong>×</strong> on its card.</li>
+  <li>Empty one category, or everything, with the trash-bin button (it asks for confirmation first).</li>
+  <li><strong>Uninstalling the app removes its stored data</strong>, because the Microsoft Store build keeps
+      everything inside its own per-user package data.</li>
+</ul>
+<p>A bug report you chose to send stays in the developer's email inbox. Write to
+<a href="mailto:jejiegypt@gmail.com">jejiegypt@gmail.com</a> and it will be deleted on request.</p>
+
+<h2>Children's privacy</h2>
+<p>Cats Up Desktop is a general-purpose utility. It is not directed at children, and it collects nothing
+about who is using it.</p>
+
+<h2>Your rights</h2>
+<p>Because nothing about you is stored on any server, there is no account to access, export, or close and
+no profile to correct. Your data sits in the folder named above, on your own machine, and you can read or
+delete it at any time. For anything you sent in a bug report, contact
+<a href="mailto:jejiegypt@gmail.com">jejiegypt@gmail.com</a> to see or delete it.</p>
+
+<h2>Changes to this policy</h2>
+<p>If the app's behaviour changes in a way that affects this document, this page is updated before that
+version ships and the "Last updated" date above changes. Material changes are also described in the app's
+release notes.</p>
+
+<h2>Contact</h2>
+<p>Cats Up Desktop is published by JeJiEgypt (listed in the Microsoft Store under the publisher name
+<strong>South Sea</strong>), which is responsible for this app and this policy. Questions:
+<a href="mailto:jejiegypt@gmail.com">jejiegypt@gmail.com</a></p>
+
+<footer>Cats Up Desktop for Windows · Published by JeJiEgypt · <a href="../">macOS policy</a></footer>
+</body>
+</html>
