@@ -21,7 +21,19 @@ One folder per app, each document as `index.html` for clean trailing-slash URLs:
 <app>/terms/index.html     →  https://jejiegypt.github.io/legal/<app>/terms/
 ```
 
-The root `index.html` is a landing page that links to every app's documents — update it when adding an app.
+When one app ships to **two stores whose behaviour differs**, add a platform sub-page instead of hedging
+a single document to cover both — a store reviewer compares the policy against *that* platform's app:
+
+```
+<app>/privacy/index.html            →  .../legal/<app>/privacy/             (original / default platform)
+<app>/privacy/<platform>/index.html →  .../legal/<app>/privacy/<platform>/  (e.g. windows)
+```
+
+Each page names the platform it covers and links to its sibling. Currently `cats-up/privacy/` is the
+**macOS** (Mac App Store) policy and `cats-up/privacy/windows/` is the **Windows** (Microsoft Store) one.
+
+The root `index.html` is a landing page that links to every app's documents — update it when adding an
+app or a platform variant.
 
 ## Rules
 
