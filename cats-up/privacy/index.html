@@ -9,28 +9,36 @@
          max-width: 720px; margin: 40px auto; padding: 0 20px; line-height: 1.65; color: #1a1a1a; }
   h1 { font-size: 1.8rem; margin-bottom: .2rem; } h2 { font-size: 1.2rem; margin-top: 2rem; }
   .updated { color: #666; font-size: .9rem; margin-top: 0; }
+  .platform { color: #666; font-size: .9rem; margin-top: .2rem; }
   ul { padding-left: 1.2rem; } li { margin: .3rem 0; }
   code { background: #f4f4f4; padding: 1px 5px; border-radius: 4px; font-size: .9em; }
+  .note { background: #fbf7e8; border: 1px solid #ecdfae; border-radius: 6px; padding: .8rem 1rem; }
   footer { margin-top: 3rem; color: #666; font-size: .85rem; }
+  a { color: #1a56db; }
 </style>
 </head>
 <body>
 <h1>Privacy Policy — Cats Up</h1>
-<p class="updated">Last updated: June 10, 2026</p>
+<p class="updated">Last updated: August 2, 2026</p>
+<p class="platform">This policy covers the <strong>macOS</strong> version of Cats Up, distributed
+through the Mac App Store. The Windows version has its own policy:
+<a href="windows/">Cats Up Desktop for Windows — Privacy Policy</a>.</p>
 
 <p>Cats Up ("the app", "we", "us") is a clipboard manager and file drawer published by
-JeJiEgypt. This policy explains how the app handles your information. The short version:
-<strong>the app collects nothing, sends nothing, and stores everything only on your device.</strong>
-This policy applies to Cats Up for macOS and Windows.</p>
+JeJiEgypt. It runs entirely on your own Mac: <strong>no user accounts, no servers of ours, no
+analytics, and no advertising</strong>. Everything it captures stays on your device, with one
+exception you control: a bug report you choose to send (see
+<a href="#network">What leaves your device</a>).</p>
 
-<h2>No data collected, no data shared</h2>
-<p>Cats Up does <strong>not</strong> collect, transmit, sell, or share any personal or usage data.
-Your clipboard contents, screenshots, recordings, and files <strong>never leave your device</strong>.
+<h2>No tracking, no accounts, no third-party analytics</h2>
+<p>Cats Up does <strong>not</strong> collect, sell, or share personal or usage data, and it does
+<strong>not</strong> transmit your clipboard contents, screenshots, recordings, or files anywhere.
 The app contains <strong>no analytics, no crash reporting, no advertising, and no third-party SDKs or
-trackers</strong>, and it requires <strong>no account, sign-in, email, or login</strong>. It does not
-access or use any device identifier or advertising ID. The app makes no network requests to send your
-information anywhere; the only time it touches the network is when <em>you</em> click a link inside a
-captured item, which opens that link in your default web browser.</p>
+trackers</strong>, and it requires <strong>no account, sign-in, or login</strong>. It does not access
+or use any device identifier or advertising ID. The only data that ever leaves your Mac is a bug report
+you deliberately fill in and send — described under <a href="#network">What leaves your device</a>
+below. Aside from that, the network is touched only when <em>you</em> click a link inside a captured
+item, which opens that link in your default web browser.</p>
 
 <h2>What the app does on your device</h2>
 <p>To work as a clipboard manager and file drawer, the app accesses the following — all locally, and
@@ -47,7 +55,10 @@ only to display items back to you:</p>
 </ul>
 <p>On macOS, access to your screenshot folder and any folders you add is granted only through
 folders <strong>you select yourself</strong>, using the system's security-scoped bookmarks. The app
-never accesses files you have not granted it.</p>
+never accesses files you have not granted it, and it does not scan or index the rest of your disk.</p>
+<p>You can switch off any capture type — text, images, videos, links, or files — in Settings. With
+images off, for example, your screenshots stay in your screenshot folder untouched, exactly as if the
+app were not running.</p>
 
 <h2>What the app stores on your device</h2>
 <p>Everything the app keeps is saved <strong>locally, in the app's private on-device storage</strong>,
@@ -55,34 +66,62 @@ and never leaves your device. This includes:</p>
 <ul>
   <li>The clipboard items you capture — copied text and links, copied/screenshot images, and screen
       recordings;</li>
-  <li>Metadata about downloads that appear in the drawer (such as file name and path);</li>
+  <li>Metadata about copied and downloaded files that appear in the drawer (such as file name and path)
+      — only a reference; the file itself is never copied or moved;</li>
   <li>The folders you add to the Local tab and their display labels;</li>
-  <li>Your settings — the chosen screenshot folder, window size, panel options, and your chosen app
-      language.</li>
+  <li>Your settings — the chosen screenshot folder, window size, panel options, sort order, which
+      capture types are enabled, and your chosen app language.</li>
 </ul>
 <p>This data is stored only for the app to function on your device. It is not transmitted to us or to
 anyone else.</p>
+
+<div class="note">
+<p><strong>Please understand what a clipboard history means.</strong> If you copy a password, a recovery
+code, or anything else sensitive, it is saved as plain text like any other copied text. Delete such
+items from the app when you are done, or turn off text capture in Settings before copying them.</p>
+</div>
 
 <h2>Your data stays on your device</h2>
 <p>Because the app stores personal clipboard and file information, that data is intentionally kept
 <strong>on-device only</strong>. It is not uploaded to any server controlled by us, and the app has no
 cloud sync. You remain in control: you can delete any item, clear a whole category, or remove a folder
-at any time. The app's managed copies (clipboard images and screen recordings) are deleted when you
-delete the corresponding item. If you uninstall the app or clear its data, the stored information is
-permanently deleted. Your own files on disk (downloads and the files inside folders you add) are never
-deleted by clearing the drawer — only the app's own captured copies are.</p>
+at any time. When you delete an item, the app's own managed copies (clipboard images and screen
+recordings) are sent to the <strong>Trash</strong> where possible, rather than destroyed. Your own files
+on disk — downloads, files you copied, and the files inside folders you add — are <strong>never</strong>
+deleted by clearing the drawer; only the app's own captured copies are. If you uninstall the app or
+clear its data, the stored information is permanently deleted.</p>
+
+<h2 id="network">What leaves your device</h2>
+<p><strong>One thing, and only if you choose to send it: a bug report.</strong></p>
+<p>If you open <strong>Report a bug</strong> and press Send, the app transmits what you typed — the
+subject, the description, and your email address if you chose to provide one — together with the app
+version and your platform name (<code>darwin</code>). It is sent over HTTPS to <strong>Web3Forms</strong>
+(<code>api.web3forms.com</code>), a third-party form-to-email relay, which forwards it to the developer's
+inbox at <a href="mailto:jejiegypt@gmail.com">jejiegypt@gmail.com</a>. It is used only to answer and fix
+the problem you reported. See <a href="https://web3forms.com/privacy">Web3Forms' privacy policy</a> for
+how they handle that message in transit.</p>
+<p>Nothing else is sent. The app makes <strong>no</strong> other network requests: no analytics, no
+telemetry, no crash reporting, no advertising, no third-party SDKs or trackers, and no update checks of
+its own (updates are delivered by the Mac App Store). <strong>No clipboard content, screenshot,
+recording, file, or folder information is ever transmitted</strong> — not to us, not to anyone. The only
+other time the network is involved is when <em>you</em> click a link in a captured item, which opens it
+in your default browser.</p>
+<p>Your data is never sold, rented, or shared. A bug report you chose to send stays in the developer's
+email inbox; write to <a href="mailto:jejiegypt@gmail.com">jejiegypt@gmail.com</a> and it will be shown
+or deleted on request.</p>
 
 <h2>Children's privacy</h2>
-<p>The app is not directed to children and collects no data from anyone, including children.</p>
+<p>The app is a general-purpose utility. It is not directed to children and collects nothing about who
+is using it.</p>
 
 <h2>Changes to this policy</h2>
 <p>If this policy changes, the updated version will be posted at this URL with a revised "Last updated"
-date.</p>
+date. Material changes are also described in the app's release notes.</p>
 
 <h2>Contact</h2>
 <p>Cats Up is published by JeJiEgypt, which is responsible for this app and this policy. Questions:
 <a href="mailto:jejiegypt@gmail.com">jejiegypt@gmail.com</a></p>
 
-<footer>Cats Up · Published by JeJiEgypt</footer>
+<footer>Cats Up · Published by JeJiEgypt · <a href="windows/">Windows policy</a></footer>
 </body>
 </html>
