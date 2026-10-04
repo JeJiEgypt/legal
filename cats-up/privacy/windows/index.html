@@ -22,7 +22,7 @@
 </head>
 <body>
 <h1>Privacy Policy — Cats Up Desktop for Windows</h1>
-<p class="updated">Last updated: September 12, 2026</p>
+<p class="updated">Last updated: October 4, 2026</p>
 <p class="platform">This policy covers the <strong>Windows</strong> version of Cats Up Desktop,
 distributed through the Microsoft Store. The macOS version has its own policy:
 <a href="../">Cats Up — Privacy Policy (macOS)</a>.</p>
@@ -38,7 +38,7 @@ to send (see <a href="#network">What leaves your device</a>).</p>
   <tr><th>What</th><th>What is stored</th></tr>
   <tr><td>Copied text and links</td><td>The text itself (up to 50,000 characters per item)</td></tr>
   <tr><td>Copied images (image data)</td><td>The image, saved as a PNG file in the app's own data folder</td></tr>
-  <tr><td>Screenshots you take</td><td>The image file, copied into the app's own data folder (and, unless <strong>Keep the original file</strong> is on in Settings — version 1.2.0 and later — removed from your screenshots folder)</td></tr>
+  <tr><td>Screenshots you take</td><td>The image file, copied into the app's own data folder (and, unless <strong>Keep the original file</strong> is on in Settings — version 1.2.0 and later — removed from your screenshots folder). From version 1.2.0 this covers any image that appears in <code>Pictures\Screenshots</code> while the app is running — see below</td></tr>
   <tr><td>Screen recordings you make</td><td>The video file, moved into the app's own data folder</td></tr>
   <tr><td>Files you copy in File Explorer</td><td><strong>Only a reference</strong> — the file's path, name, size and type. The file itself is never copied or moved.</td></tr>
   <tr><td>Files you download</td><td><strong>Only a reference</strong>, as above</td></tr>
@@ -63,7 +63,14 @@ from the app when you are done, or turn off text capture in Settings before copy
   <li><strong>The clipboard</strong>, checked about twice per second while the app is running, so text,
       links, images, and copied files appear in the drawer.</li>
   <li><strong><code>Pictures\Screenshots</code></strong>, so a <code>Win</code>+<code>PrtScn</code> or
-      Snipping Tool capture appears automatically.</li>
+      Snipping Tool capture appears automatically. From version 1.2.0 the app collects <strong>any image
+      file</strong> (<code>.png</code>, <code>.jpg</code>, <code>.jpeg</code>) that appears in this folder
+      while it is running, rather than trying to recognise the filename: Windows translates the auto-saved
+      name into your display language and spells it differently across Windows versions and capture tools,
+      so matching on the name silently collected nothing at all on a non-English Windows. Images that are
+      already in the folder when the app starts are left alone — only ones that appear afterwards are
+      collected. If you keep your own images there, turn on <strong>Keep the original file</strong> under
+      Images in Settings, or turn Images off.</li>
   <li><strong><code>Videos\Captures</code></strong>, so an Xbox Game Bar
       (<code>Win</code>+<code>Alt</code>+<code>R</code>) recording appears automatically.</li>
   <li><strong>Your Downloads folder</strong>, to notice newly finished downloads.</li>
@@ -89,7 +96,10 @@ the resulting file.</p>
   <li><strong>A screenshot it captures is removed from your <code>Pictures\Screenshots</code> folder</strong>
       once it has been added to the app — unless <strong>Keep the original file</strong> is on under Images
       in Settings (version 1.2.0 and later), in which case the file stays where Windows saved it and the
-      app keeps its own copy.</li>
+      app keeps its own copy. This applies to <strong>any image the app collects from that folder</strong>,
+      which from version 1.2.0 means any image appearing there while the app runs (see above) — so if you
+      save your own images into <code>Pictures\Screenshots</code>, turn <strong>Keep the original
+      file</strong> on.</li>
   <li><strong>A screen recording it captures is moved</strong> out of <code>Videos\Captures</code> into the
       app's own data folder.</li>
   <li>Deleting such an item in the app sends the file to your <strong>Recycle Bin</strong> where possible,
